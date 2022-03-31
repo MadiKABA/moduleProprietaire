@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProprieteController;
 use App\Http\Controllers\TypeProprieteController;
+use \App\Http\Controllers\CommuneController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,12 @@ Route::get('/propriete/create', [ProprieteController::class,'create'])->name('pr
 Route::post('/propriete/store', [ProprieteController::class,'store'])->name('propriete.store');
 Route::post('/propriete/edit/{id}','ProprieteController@edit')->name('propriete.edit');
 Route::get('/propriete/edit/{id}','ProprieteController@destroy')->name('propriete.destroy');
+
+
+
+Route::get('/commune', [CommuneController::class,'index']);
+Route::get('/commune', [CommuneController::class,'index'])->name('commune.index');
+Route::get('/commune/create', [CommuneController::class,'create'])->name('commune.create');
+Route::post('/commune/store', [CommuneController::class,'store'])->name('commune.store');
+Route::post('/commune/edit/{id}','CommuneController@edit')->name('commune.edit');
+Route::get('/commune/edit/{id}','CommuneController@destroy')->name('commune.destroy');
