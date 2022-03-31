@@ -34,7 +34,7 @@ class TypeProprieteController extends Controller
         $typePropriete = Type_Propriete::findOrFail($id);
         $typePropriete->delete();
 
-        return ("idee supprimer");
+        return ("typePropriete supprimer");
 
     }
     public function update(Request $request, $id)
