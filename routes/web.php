@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProprieteController;
 use App\Http\Controllers\TypeProprieteController;
 use \App\Http\Controllers\CommuneController;
+use \App\Http\Controllers\QuartierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,3 +45,11 @@ Route::get('/commune/create', [CommuneController::class,'create'])->name('commun
 Route::post('/commune/store', [CommuneController::class,'store'])->name('commune.store');
 Route::post('/commune/edit/{id}','CommuneController@edit')->name('commune.edit');
 Route::get('/commune/edit/{id}','CommuneController@destroy')->name('commune.destroy');
+
+
+Route::get('/quartier', [QuartierController::class,'index']);
+Route::get('/quartier', [QuartierController::class,'index'])->name('quartier.index');
+Route::get('/quartier/create', [QuartierController::class,'create'])->name('quartier.create');
+Route::post('/quartier/store', [QuartierController::class,'store'])->name('quartier.store');
+Route::post('/quartier/edit/{id}','QuartierController@edit')->name('quartier.edit');
+Route::get('/quartier/edit/{id}','QuartierController@destroy')->name('quartier.destroy');
