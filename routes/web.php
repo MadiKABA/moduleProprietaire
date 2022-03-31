@@ -4,6 +4,7 @@ use App\Http\Controllers\ProprieteController;
 use App\Http\Controllers\TypeProprieteController;
 use \App\Http\Controllers\CommuneController;
 use \App\Http\Controllers\QuartierController;
+use \App\Http\Controllers\ProprietairesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,3 +54,11 @@ Route::get('/quartier/create', [QuartierController::class,'create'])->name('quar
 Route::post('/quartier/store', [QuartierController::class,'store'])->name('quartier.store');
 Route::post('/quartier/edit/{id}','QuartierController@edit')->name('quartier.edit');
 Route::get('/quartier/edit/{id}','QuartierController@destroy')->name('quartier.destroy');
+
+
+Route::get('/proprietaire', [ProprietairesController::class,'index']);
+Route::get('/proprietaire', [ProprietairesController::class,'index'])->name('proprietaire.index');
+Route::get('/proprietaire/create', [ProprietairesController::class,'create'])->name('proprietaire.create');
+Route::post('/proprietaire/store', [ProprietairesController::class,'store'])->name('proprietaire.store');
+Route::post('/proprietaire/edit/{id}','ProprietairesController@edit')->name('proprietaire.edit');
+Route::get('/proprietaire/edit/{id}','ProprietairesController@destroy')->name('proprietaire.destroy');
