@@ -60,8 +60,10 @@ Route::get('/proprietaire', [ProprietairesController::class,'index'])->name('pro
 Route::get('/proprietaire/create', [ProprietairesController::class,'index'])->name('proprietaire.index');
 Route::get('/proprietaire/create', [ProprietairesController::class,'create'])->name('proprietaire.create');
 Route::post('/proprietaire/store', [ProprietairesController::class,'store'])->name('proprietaire.store');
+Route::get('/proprietaire/destroy/{id}',[ProprietairesController::class,'destroy'])->name('proprietaire.destroy');
+Route::get('/proprietaire/show/{id}',[ProprietairesController::class,'show'])->name('proprietaire.show');
 
 Route::get('/proprietaire/edit/{id}', [ProprietairesController::class,'edit'])->name('proprietaire.edit');
 Route::post('/proprietaire/update/{id}',[ProprietairesController::class,'update'])->name('proprietaire.update');
 
-Route::get('/proprietaire/destroy/{id}',[ProprietairesController::class,'destroy'])->name('proprietaire.destroy');
+

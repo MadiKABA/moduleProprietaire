@@ -48,4 +48,13 @@ class ProprietairesController extends Controller
             'proprietaires' => $proprietaire
         ]);
     }
+
+    public function show($id)
+    {
+
+        $proprietaire = Proprietaires::find($id);
+        return view('proprietaires/show', [
+            'proprietaires' => $proprietaire
+        ]);
+    }
 }

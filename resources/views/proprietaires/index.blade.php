@@ -36,7 +36,7 @@
                                              <td>{{$prop->sexe}}</td>
 
                                               <td>
-                                                  <i class="bi bi-plus-circle" style="color: #03ECC7;"></i>
+                                                  <a href="{{route('proprietaire.show',['id'=>$prop->id])}}"><i class="bi bi-plus-circle" style="color: #03ECC7;"></i></a>
                                                   <a href="{{route('proprietaire.edit',['id'=>$prop->id])}}"><i class="bi bi-pencil-square" style="color:#FFEF00;"></i></a>
                                                   <a href="{{route('proprietaire.destroy',['id'=>$prop->id])}}"> <i class="bi bi-x-circle" style="color:#E40000;"></i></a>
                                               </td>
