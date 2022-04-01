@@ -39,6 +39,13 @@ class ProprietairesController extends Controller
     {
         $proprietaire = Proprietaires::find($id);
         $proprietaire->update($request->all());
-        return $proprietaire;
+        return redirect()->route('proprietaire.list');
+    }
+    public function edit($id)
+    {
+        $proprietaire = Proprietaires::find($id);
+        return view('proprietaires/edit', [
+            'proprietaires' => $proprietaire
+        ]);
     }
 }

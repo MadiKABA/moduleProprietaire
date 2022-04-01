@@ -28,6 +28,7 @@
       <link rel="stylesheet" href="{{asset('./css/perfect-scrollbar.css')}}" />
       <!-- custom css -->
       <link rel="stylesheet" href="{{asset('./css/custom.css')}}" />
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
    </head>
    <body class="dashboard dashboard_1">
       <div class="full_container">
@@ -45,7 +46,7 @@
                      <div class="user_profle_side">
                         <div class="user_img"><img class="img-responsive" src="{{asset('./images/layout_img/user_img.jpg')}}" alt="#" /></div>
                         <div class="user_info">
-                           <h6>John David</h6>
+                           <h6>Aicha ba</h6>
                            <p><span class="online_animation"></span> Online</p>
                         </div>
                      </div>
@@ -55,7 +56,7 @@
                   <h4>General</h4>
                   <ul class="list-unstyled components">
                      <li class="active">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Proprietaires</span></a>
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Gestion Proprietaires</span></a>
                         <ul class="collapse list-unstyled" id="dashboard">
                            <li>
                               <a href="/proprietaire/create"> <span>Ajouter</span></a>
@@ -64,15 +65,15 @@
                               <a href="/proprietaire"><span>List</span></a>
                            </li>
                         </ul>
-                     </li>
-                     <li class="">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Propriete</span></a>
-                        <ul class="collapse list-unstyled" id="dashboard">
-                          
-                        </ul>
-                     </li>
+{{--                     </li>--}}
+{{--                     <li class="">--}}
+{{--                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Propriete</span></a>--}}
+{{--                        <ul class="collapse list-unstyled" id="dashboard">--}}
+{{--                          --}}
+{{--                        </ul>--}}
+{{--                     </li>--}}
                      <li>
-                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
+                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Gestion Propriete</span></a>
                         <ul class="collapse list-unstyled" id="element">
                         <li>
                               <a href="/propriete/create"> <span>Ajouter</span></a>
@@ -97,7 +98,7 @@
                         </div>
                         <div class="right_topbar">
                            <div class="icon_info">
-                              
+
                               <ul class="user_profile_dd">
                                  <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="im{{asset('./images/layout_img/user_img.jpg')}}" alt="#" /><span class="name_user">KABA</span></a>
@@ -125,7 +126,6 @@
                            </div>
                         </div>
                      </div>
-                  
-                  
-                   
-              
+
+
+

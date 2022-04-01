@@ -1,13 +1,13 @@
 @extends('layout.layout')
- 
+
 @section('content')
- 
-	
+
+
 <div class="full_container">
          <div class="">
             <div class="row">
-             
-           
+
+
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
@@ -23,6 +23,7 @@
                                              <th>Prenom</th>
                                              <th>Telephone</th>
                                              <th>Genre</th>
+
                                              <th>Action</th>
                                           </tr>
                                        </thead>
@@ -33,20 +34,23 @@
                                              <td>{{$prop->prenom}}</td>
                                              <td>{{$prop->telephone}}</td>
                                              <td>{{$prop->sexe}}</td>
-                                             <td><a href="#">Detail</a></td>
-                                             <td><a href="#">Edit</a></td>
-                                             <td><a href="#">Delete</a></td>
+
+                                              <td>
+                                                  <i class="bi bi-plus-circle" style="color: #03ECC7;"></i>
+                                                  <a href="{{route('proprietaire.edit',['id'=>$prop->id])}}"><i class="bi bi-pencil-square" style="color:#FFEF00;"></i></a>
+                                                  <i class="bi bi-x-circle" style="color:#E40000;"></i>
+                                              </td>
                                           </tr>
                                           @endforeach
-                                         
+
                                        </tbody>
                                     </table>
-                                    
+
                                  </div>
                               </div>
                            </div>
                         </div>
-          
+
          </div>
       </div>
 @endsection

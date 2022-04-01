@@ -56,9 +56,12 @@ Route::post('/quartier/edit/{id}','QuartierController@edit')->name('quartier.edi
 Route::get('/quartier/edit/{id}','QuartierController@destroy')->name('quartier.destroy');
 
 
-Route::get('/proprietaire', [ProprietairesController::class,'index']);
+Route::get('/proprietaire', [ProprietairesController::class,'index'])->name('proprietaire.list');
 Route::get('/proprietaire/create', [ProprietairesController::class,'index'])->name('proprietaire.index');
 Route::get('/proprietaire/create', [ProprietairesController::class,'create'])->name('proprietaire.create');
 Route::post('/proprietaire/store', [ProprietairesController::class,'store'])->name('proprietaire.store');
-Route::post('/proprietaire/edit/{id}','ProprietairesController@edit')->name('proprietaire.edit');
-Route::get('/proprietaire/edit/{id}','ProprietairesController@destroy')->name('proprietaire.destroy');
+
+Route::get('/proprietaire/edit/{id}', [ProprietairesController::class,'edit'])->name('proprietaire.edit');
+Route::post('/proprietaire/update/{id}',[ProprietairesController::class,'update'])->name('proprietaire.update');
+
+Route::get('/proprietaire/destroy/{id}','ProprietairesController@destroy')->name('proprietaire.destroy');

@@ -1,17 +1,17 @@
 @extends('layout.layout')
- 
+
 @section('content')
- 
-	
+
+
 <div class="full_container">
          <div class="">
             <div class="row">
-             
-           
+
+
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>Liste Proprietaires</h2>
+                                    <h2>Liste des Proprietes</h2>
                                  </div>
                               </div>
                               <div class="table_section padding_infor_info">
@@ -19,9 +19,12 @@
                                     <table class="table">
                                        <thead class="thead-dark ">
                                           <tr>
-                                             <th>Linlle</th>
+                                             <th>Libelle</th>
                                              <th>Nomnre Etage</th>
                                              <th>Superficie</th>
+
+{{--                                             <th>TypePropriete</th>--}}
+                                             <th>Quartier</th>
                                              <th>Action</th>
                                           </tr>
                                        </thead>
@@ -31,23 +34,25 @@
                                              <td>{{$propriete->libelle}}</td>
                                              <td>{{$propriete->nombre_etage}}</td>
                                              <td>{{$propriete->superficie}}</td>
+{{--                                              <td>{{$propriete->type_proprietes->libelle}}</td>--}}
                                              <td>{{$propriete->quartier->libelle}}</td>
-                                             <td>{{$propriete->type_Propriete->libelle}}</td>
-                                             
-                                             <td><a href="#">Detail</a></td>
-                                             <td><a href="#">Edit</a></td>
-                                             <td><a href="#">Delete</a></td>
+
+                                             <td>
+                                                 <i class="bi bi-plus-circle" style="color: #03ECC7;"></i>
+                                                 <i class="bi bi-pencil-square" style="color:#FFEF00;"></i>
+                                                 <i class="bi bi-x-circle" style="color:#E40000;"></i>
+                                             </td>
                                           </tr>
                                           @endforeach
-                                         
+
                                        </tbody>
                                     </table>
-                                    
+
                                  </div>
                               </div>
                            </div>
                         </div>
-          
+
          </div>
       </div>
 @endsection
