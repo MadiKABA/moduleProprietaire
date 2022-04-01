@@ -10,7 +10,7 @@
                     <div class="login_section">
                         <div class="logo_login">
                             <div class="center">
-                                <h2>Ajouter Proprietaire</h2>
+                                <h2>Modifier Proprietaire</h2>
                             </div>
                         </div>
                         <div class="login_form">

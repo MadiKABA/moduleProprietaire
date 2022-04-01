@@ -48,6 +48,21 @@ class ProprieteController extends Controller
     {
         $propriete = Propriete::find($id);
         $propriete->update($request->all());
-        return $propriete;
+        return redirect()->route('propriete.index');
+    }
+
+    public function edit($id)
+    {
+        $propriete = Propriete::find($id);
+        $typeProprietes=Type_Propriete::all();
+        $quartiers=Quartier::all();
+        $proprietaires=Proprietaires::all();
+        return view('proprietes/edit', [
+            'propriete' => $propriete,
+            'typeProprietes'=>$typeProprietes,
+            'quartiers'=>$quartiers,
+            'proprietaires'=>$proprietaires,
+
+        ]);
     }
 }

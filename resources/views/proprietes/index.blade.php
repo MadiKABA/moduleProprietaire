@@ -39,7 +39,7 @@
 
                                              <td>
                                                  <i class="bi bi-plus-circle" style="color: #03ECC7;"></i>
-                                                 <i class="bi bi-pencil-square" style="color:#FFEF00;"></i>
+                                                 <a href="{{route('propriete.edit',['id'=>$propriete->id])}}"><i class="bi bi-pencil-square" style="color:#FFEF00;"></i></a>
                                                  <i class="bi bi-x-circle" style="color:#E40000;"></i>
                                              </td>
                                           </tr>

@@ -31,12 +31,14 @@ Route::post('/type/edit/{id}','TypeProprieteController@edit')->name('typeproprie
 Route::get('/type/edit/{id}','TypeProprieteController@destroy')->name('typepropriete.destroy');
 
 
-Route::get('/propriete', [ProprieteController::class,'index']);
+Route::get('/propriete', [ProprieteController::class,'index'])->name('propriete.list');
 Route::get('/propriete', [ProprieteController::class,'index'])->name('propriete.index');
 Route::get('/propriete/create', [ProprieteController::class,'create'])->name('propriete.create');
 Route::post('/propriete/store', [ProprieteController::class,'store'])->name('propriete.store');
-Route::post('/propriete/edit/{id}','ProprieteController@edit')->name('propriete.edit');
-Route::get('/propriete/edit/{id}','ProprieteController@destroy')->name('propriete.destroy');
+Route::get('/propriete/edit/{id}',[ProprieteController::class,'edit'])->name('propriete.edit');
+Route::get('/propriete/destroy/{id}','ProprieteController@destroy')->name('propriete.destroy');
+
+Route::post('/propriete/update/{id}',[ProprieteController::class,'update'])->name('propriete.update');
 
 
 
