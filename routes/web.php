@@ -36,7 +36,7 @@ Route::get('/propriete', [ProprieteController::class,'index'])->name('propriete.
 Route::get('/propriete/create', [ProprieteController::class,'create'])->name('propriete.create');
 Route::post('/propriete/store', [ProprieteController::class,'store'])->name('propriete.store');
 Route::get('/propriete/edit/{id}',[ProprieteController::class,'edit'])->name('propriete.edit');
-Route::get('/propriete/destroy/{id}','ProprieteController@destroy')->name('propriete.destroy');
+Route::get('/propriete/destroy/{id}',[ProprieteController::class,'destroy'])->name('propriete.destroy');
 
 Route::post('/propriete/update/{id}',[ProprieteController::class,'update'])->name('propriete.update');
 

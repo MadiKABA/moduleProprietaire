@@ -41,7 +41,7 @@ class ProprieteController extends Controller
         $propriete = Propriete::findOrFail($id);
         $propriete->delete();
 
-        return ("propriete supprime");
+        return redirect()->route('propriete.index');
 
     }
     public function update(Request $request, $id)
