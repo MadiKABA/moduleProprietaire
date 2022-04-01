@@ -1,12 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\ProprieteController;
 use App\Http\Controllers\TypeProprieteController;
 use \App\Http\Controllers\CommuneController;
 use \App\Http\Controllers\QuartierController;
 use \App\Http\Controllers\ProprietairesController;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 
 Route::get('/type', [TypeProprieteController::class,'index']);
@@ -58,7 +64,8 @@ Route::get('/quartier/edit/{id}','QuartierController@destroy')->name('quartier.d
 
 Route::get('/proprietaire', [ProprietairesController::class,'index']);
 Route::get('/proprietaire/create', [ProprietairesController::class,'index'])->name('proprietaire.index');
-Route::get('/proprietaire/create', [ProprietairesController::class,'create'])->name('proprietaire.create');
+Route::get('/proprietaire/create', [ProprietairesController::class,'create'])->name('proprietaire.create')->middleware('auth');
+Route::get('/proprietaire/reportPdf', [ProprietairesController::class,'reportPdf'])->name('proprietaire.reportPdf')->middleware('auth');
 Route::post('/proprietaire/store', [ProprietairesController::class,'store'])->name('proprietaire.store');
 Route::post('/proprietaire/edit/{id}','ProprietairesController@edit')->name('proprietaire.edit');
-Route::get('/proprietaire/edit/{id}','ProprietairesController@destroy')->name('proprietaire.destroy');
+Route::get('/proprietaire/edit/{id}','ProprietairesController@destroy')->name('proprietaire.destroy')->middleware('auth');;
