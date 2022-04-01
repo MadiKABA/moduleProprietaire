@@ -32,7 +32,7 @@ class ProprietairesController extends Controller
         $proprietaire = Proprietaires::findOrFail($id);
         $proprietaire->delete();
 
-        return ("proprietaires supprime");
+        return redirect()->route('proprietaire.list');
 
     }
     public function update(Request $request, $id)

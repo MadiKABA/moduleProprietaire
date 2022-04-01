@@ -64,4 +64,4 @@ Route::post('/proprietaire/store', [ProprietairesController::class,'store'])->na
 Route::get('/proprietaire/edit/{id}', [ProprietairesController::class,'edit'])->name('proprietaire.edit');
 Route::post('/proprietaire/update/{id}',[ProprietairesController::class,'update'])->name('proprietaire.update');
 
-Route::get('/proprietaire/destroy/{id}','ProprietairesController@destroy')->name('proprietaire.destroy');
+Route::get('/proprietaire/destroy/{id}',[ProprietairesController::class,'destroy'])->name('proprietaire.destroy');
