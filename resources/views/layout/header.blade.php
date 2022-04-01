@@ -55,17 +55,34 @@
                   <h4>General</h4>
                   <ul class="list-unstyled components">
                      <li class="active">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Proprietaires</span></a>
                         <ul class="collapse list-unstyled" id="dashboard">
                            <li>
-                              <a href="dashboard.html"> <span>Ajouter</span></a>
+                              <a href="/proprietaire/create"> <span>Ajouter</span></a>
                            </li>
                            <li>
-                              <a href="dashboard_2.html">> <span>List</span></a>
+                              <a href="/proprietaire"><span>List</span></a>
                            </li>
                         </ul>
                      </li>
-                    
+                     <li class="">
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Propriete</span></a>
+                        <ul class="collapse list-unstyled" id="dashboard">
+                          
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
+                        <ul class="collapse list-unstyled" id="element">
+                        <li>
+                              <a href="/propriete/create"> <span>Ajouter</span></a>
+                           </li>
+                           <li>
+                              <a href="/propriete"><span>List</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                     </li>
                   </ul>
                </div>
             </nav>

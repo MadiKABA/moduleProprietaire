@@ -19,9 +19,7 @@ class TypeProprieteController extends Controller
 
     public function create(){
         $typePropriete=Type_Propriete::all();
-        return view('typeProprietes/create',[
-            'typeProprietes'=>$typePropriete
-        ]);
+        return view('typeProprietes/add');
 
     }
 

@@ -18,15 +18,14 @@ class ProprietairesController extends Controller
 
     public function create(){
         $proprietaire=Proprietaires::all();
-        return view('proprietaires/create',[
-            'proprietaires'=>$proprietaire
-        ]);
+        return view('proprietaires/add');
+
 
     }
 
     public function store(Request  $request){
         Proprietaires::create( $request->all());
-        return redirect()->route('proprietaires.index');
+        return redirect()->route('proprietaire.create');
     }
     public function destroy($id)
     {

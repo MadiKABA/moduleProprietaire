@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Propriete;
+use App\Models\Proprietaires;
+use App\Models\Type_Propriete;
+use App\Models\Quartier;
 use Illuminate\Http\Request;
 
 class ProprieteController extends Controller
@@ -11,15 +14,20 @@ class ProprieteController extends Controller
     {
 
         $propriete = Propriete::all();
-        return view('$proprietes/index', [
-            '$proprietes' => $propriete
+        return view('proprietes/index', [
+            'proprietes' => $propriete
         ]);
     }
 
     public function create(){
         $propriete=Propriete::all();
-        return view('proprietes/create',[
-            'proprietes'=>$propriete
+        $proprietaire = Proprietaires::all();
+        $typePropriete = Type_Propriete::all();
+        $quartier = Quartier::all();
+        return view('proprietes/add',[
+            'proprietaires'=>$proprietaire,
+            'typeproprietes'=>$typePropriete,
+            'quartiers'=>$quartier,
         ]);
 
     }
