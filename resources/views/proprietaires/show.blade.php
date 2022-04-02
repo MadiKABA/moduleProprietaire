@@ -14,7 +14,7 @@
                             </div>
                         </div>
                         <div class="login_form center">
-                            <form action="{{route('proprietaire.update',['id'=>$proprietaires->id])}}" method="POST">
+                            <form action="#" method="POST">
                                 @csrf
                                 <fieldset>
                                     <div class="field center">

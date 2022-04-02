@@ -65,4 +65,13 @@ class ProprieteController extends Controller
 
         ]);
     }
+
+    public function show($id)
+    {
+
+        $propriete = Propriete::find($id);
+        return view('proprietes/show', [
+            'propriete' => $propriete
+        ]);
+    }
 }
