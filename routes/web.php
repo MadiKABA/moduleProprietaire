@@ -39,10 +39,10 @@ Route::get('/type/edit/{id}','TypeProprieteController@destroy')->name('typepropr
 
 Route::get('/propriete', [ProprieteController::class,'index']);
 Route::get('/propriete', [ProprieteController::class,'index'])->name('propriete.index');
-Route::get('/propriete/create', [ProprieteController::class,'create'])->name('propriete.create');
+Route::get('/propriete/create', [ProprieteController::class,'create'])->name('propriete.create')->middleware('auth');
 Route::post('/propriete/store', [ProprieteController::class,'store'])->name('propriete.store');
-Route::post('/propriete/edit/{id}','ProprieteController@edit')->name('propriete.edit');
-Route::get('/propriete/edit/{id}','ProprieteController@destroy')->name('propriete.destroy');
+Route::post('/propriete/edit/{id}','ProprieteController@edit')->name('propriete.edit')->middleware('auth');
+Route::get('/propriete/edit/{id}','ProprieteController@destroy')->name('propriete.destroy')->middleware('auth');
 
 
 
@@ -66,6 +66,6 @@ Route::get('/proprietaire', [ProprietairesController::class,'index']);
 Route::get('/proprietaire/create', [ProprietairesController::class,'index'])->name('proprietaire.index');
 Route::get('/proprietaire/create', [ProprietairesController::class,'create'])->name('proprietaire.create')->middleware('auth');
 Route::get('/proprietaire/reportPdf', [ProprietairesController::class,'reportPdf'])->name('proprietaire.reportPdf')->middleware('auth');
-Route::post('/proprietaire/store', [ProprietairesController::class,'store'])->name('proprietaire.store');
+Route::post('/proprietaire/store', [ProprietairesController::class,'store'])->name('proprietaire.store')->middleware('auth');
 Route::post('/proprietaire/edit/{id}','ProprietairesController@edit')->name('proprietaire.edit');
 Route::get('/proprietaire/edit/{id}','ProprietairesController@destroy')->name('proprietaire.destroy')->middleware('auth');;
