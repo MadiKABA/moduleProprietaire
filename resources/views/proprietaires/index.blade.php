@@ -14,9 +14,7 @@
                                     <h2>Liste Proprietaires</h2>
                                  </div>
                               </div>
-                              <div class="col-md-5 align="right">
-                                    <a href="{{url('/proprietaire/reportPdf')}}" class="btn btn-danger">Imprimer</a>
-                                 </div>
+                              
                               <div class="table_section padding_infor_info">
                                  
                                  <div class="table-responsive-sm">
