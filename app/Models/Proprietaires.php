@@ -9,4 +9,8 @@ class Proprietaires extends Model
 {
     use HasFactory;
     protected $fillable=['nom','prenom','civilite','sexe','email','telephone','dateNaissance','lieuNaissance','numPieceIdentite'];
+
+
+
+
 }

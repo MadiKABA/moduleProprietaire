@@ -33,14 +33,30 @@ class ProprietairesController extends Controller
         $proprietaire = Proprietaires::findOrFail($id);
         $proprietaire->delete();
 
-        return ("proprietaires supprime");
+        return redirect()->route('proprietaire.list');
 
     }
     public function update(Request $request, $id)
     {
         $proprietaire = Proprietaires::find($id);
         $proprietaire->update($request->all());
-        return $proprietaire;
+        return redirect()->route('proprietaire.list');
+    }
+    public function edit($id)
+    {
+        $proprietaire = Proprietaires::find($id);
+        return view('proprietaires/edit', [
+            'proprietaires' => $proprietaire
+        ]);
+    }
+
+    public function show($id)
+    {
+
+        $proprietaire = Proprietaires::find($id);
+        return view('proprietaires/show', [
+            'proprietaires' => $proprietaire
+        ]);
     }
 
     public function reportPdf()

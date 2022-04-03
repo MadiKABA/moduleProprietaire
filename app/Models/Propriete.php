@@ -22,10 +22,11 @@ class Propriete extends Model
     {
         return $this->belongsTo(Quartier::class);
     }
-   
+
 
     public function type_propriete()
     {
         return $this->belongsTo(Type_Propriete::class);
+
     }
 }
