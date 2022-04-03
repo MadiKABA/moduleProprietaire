@@ -41,13 +41,37 @@ class ProprieteController extends Controller
         $propriete = Propriete::findOrFail($id);
         $propriete->delete();
 
-        return ("propriete supprime");
+        return redirect()->route('propriete.index');
 
     }
     public function update(Request $request, $id)
     {
         $propriete = Propriete::find($id);
         $propriete->update($request->all());
-        return $propriete;
+        return redirect()->route('propriete.index');
+    }
+
+    public function edit($id)
+    {
+        $propriete = Propriete::find($id);
+        $typeProprietes=Type_Propriete::all();
+        $quartiers=Quartier::all();
+        $proprietaires=Proprietaires::all();
+        return view('proprietes/edit', [
+            'propriete' => $propriete,
+            'typeProprietes'=>$typeProprietes,
+            'quartiers'=>$quartiers,
+            'proprietaires'=>$proprietaires,
+
+        ]);
+    }
+
+    public function show($id)
+    {
+
+        $propriete = Propriete::find($id);
+        return view('proprietes/show', [
+            'propriete' => $propriete
+        ]);
     }
 }
