@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Proprietaires;
 use Illuminate\Http\Request;
+use PDF;
 
 class ProprietairesController extends Controller
 {
@@ -56,5 +57,52 @@ class ProprietairesController extends Controller
         return view('proprietaires/show', [
             'proprietaires' => $proprietaire
         ]);
+    }
+
+    public function reportPdf()
+    {
+        $pdf=\App::make('dompdf.wrapper');
+        $pdf->loadHtml($this->convert_customer_data_to_html());
+        $pdf->stream();
+        
+    }
+
+    public function convert_customer_data_to_html()
+    {
+        $proprietaires = Proprietaires::all();
+        
+        $output ='
+        <table class="table">
+        <thead class="thead-dark ">
+           <tr>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Telephone</th>
+              <th>Genre</th>
+              <th>Action</th>
+           </tr>
+        </thead>
+        ';
+
+      
+        foreach($proprietaires as $prop)
+        {
+            $output.='
+            <tr>
+            <td>{{$prop->nom}}</td>
+            <td>{{$prop->prenom}}</td>
+            <td>{{$prop->telephone}}</td>
+            <td>{{$prop->sexe}}</td>
+            <td><a href="#">Detail</a></td>
+            <td><a href="#">Edit</a></td>
+            <td><a href="#">Delete</a></td>
+         </tr>
+       
+            ';
+        }
+        $output.='</table>';
+    
+        return $output;
+           
     }
 }

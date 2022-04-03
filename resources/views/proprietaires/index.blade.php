@@ -14,7 +14,9 @@
                                     <h2>Liste Proprietaires</h2>
                                  </div>
                               </div>
+                              
                               <div class="table_section padding_infor_info">
+                                 
                                  <div class="table-responsive-sm">
                                     <table class="table">
                                        <thead class="thead-dark ">
